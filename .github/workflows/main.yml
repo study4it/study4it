@@ -23,6 +23,9 @@ jobs:
       - name: ESLint
         run: yarn lint
 
+      - name: GitHub Pull
+        run: git pull --rebase
+
       - name: Export
         run: yarn export
 
@@ -31,7 +34,6 @@ jobs:
           echo https://${STUDY4IT_ACCESS_TOKEN}:x-oauth-basic@github.com>> ${HOME}/.git-credentials
           git config --global user.email "study4it@mail.ru"
           git config --global user.name "study4it"
-          git pull --rebase
           git add --no-all
           git commit -m 'Publish to GitHub Pages' --allow-empty
           git push origin master
