@@ -21,7 +21,7 @@
     "export": "next export --outdir=docs",
     "prestart": "npm run export",
     "start": "serve out",
-    "prettier": "prettier --write \"**/**.{js,jsx,ts,tsx,json,babelrc}\"",
+    "prettier": "prettier --write \"**/**.{js,jsx,ts,tsx,json}\"",
     "lint": "eslint ."
   }
 }
