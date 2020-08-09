@@ -4,7 +4,7 @@ import Head from 'next/head'
 export async function getStaticProps() {
   return {
     props: {
-      something: ['one', 'two', 'four'],
+      something: ['one', 'two', 'three'],
     },
   }
 }
