@@ -1,0 +1,27 @@
+{
+  "name": "study4it",
+  "dependencies": {
+    "next": "9.5.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5",
+    "eslint": "7.6.0",
+    "serve": "11.3.2",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.20.5"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "preexport": "npm run build",
+    "export": "next export --outdir=docs",
+    "prestart": "npm run export",
+    "start": "serve out",
+    "prettier": "prettier --write \"**/**.{js,jsx,ts,tsx,json,babelrc}\"",
+    "lint": "eslint ."
+  }
+}
