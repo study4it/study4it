@@ -7,9 +7,6 @@ on:
 jobs:
   workflow:
     runs-on: ubuntu-latest
-
-    if: startsWith(github.event.comment.body, 'Publish to GitHub Pages') == false
-
     steps:
       - uses: actions/checkout@v2
 
@@ -34,8 +31,16 @@ jobs:
           echo https://${STUDY4IT_ACCESS_TOKEN}:x-oauth-basic@github.com>> ${HOME}/.git-credentials
           git config --global user.email "study4it@mail.ru"
           git config --global user.name "study4it"
-          git add .
+          git add --no-all
           git commit -m 'Publish to GitHub Pages' --allow-empty
           git push origin master
         env:
           STUDY4IT_ACCESS_TOKEN: ${{ secrets.STUDY4IT_ACCESS_TOKEN }}
+
+      - name: Trigger GitHub pages rebuild
+          run: |
+            curl --fail --request POST \
+              --url https://api.github.com/repos/${{ github.repository }}/pages/builds \
+              --header "Authorization: Bearer $STUDY4IT_ACCESS_TOKEN"
+          env:
+            STUDY4IT_ACCESS_TOKEN: ${{ secrets.STUDY4IT_ACCESS_TOKEN }}
