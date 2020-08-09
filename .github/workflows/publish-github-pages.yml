@@ -8,27 +8,9 @@ jobs:
   workflow:
     runs-on: ubuntu-latest
 
-    if: startsWith(github.event.comment.body, 'Publish to GitHub Pages')
+    if: startsWith(github.event.comment.body, 'Publish to GitHub Pages') == true
 
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '12'
-
-      - name: Install
-        run: yarn install --frozen-lockfile
-
-      - name: Export
-        run: yarn export
-
-      - name: Commit and Push to GitHub
-        run: |
-          git add .
-          git commit -m 'Publish to GitHub Pages' --allow-empty
-          git push origin master
-
       - name: Trigger GitHub pages rebuild
         run: |
           curl --fail --request POST \
