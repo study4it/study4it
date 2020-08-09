@@ -105,4 +105,5 @@ dist
 
 # Custom
 docs/CNAME
+docs/.nojekyll
 .idea
