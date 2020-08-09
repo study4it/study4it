@@ -38,9 +38,9 @@ jobs:
           STUDY4IT_ACCESS_TOKEN: ${{ secrets.STUDY4IT_ACCESS_TOKEN }}
 
       - name: Trigger GitHub pages rebuild
-          run: |
-            curl --fail --request POST \
-              --url https://api.github.com/repos/${{ github.repository }}/pages/builds \
-              --header "Authorization: Bearer $STUDY4IT_ACCESS_TOKEN"
-          env:
-            STUDY4IT_ACCESS_TOKEN: ${{ secrets.STUDY4IT_ACCESS_TOKEN }}
+        run: |
+          curl --fail --request POST \
+            --url https://api.github.com/repos/${{ github.repository }}/pages/builds \
+            --header "Authorization: Bearer $STUDY4IT_ACCESS_TOKEN"
+        env:
+          STUDY4IT_ACCESS_TOKEN: ${{ secrets.STUDY4IT_ACCESS_TOKEN }}
