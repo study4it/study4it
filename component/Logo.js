@@ -1,22 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 
+import styles from './Logo.module.css'
+
 const Logo = () => (
-  <Link href="/kubletes">
-    <a>
-      <img className="icon" src="/assets/logo.svg" />
-      <div className="text">Study4IT</div>
-      <style jsx>{`
-        .root {
-          margin: 50px;
-        }
-        .icon {
-          margin: 50px;
-        }
-        .text {
-          margin: 50px;
-        }
-      `}</style>
+  <Link href="/">
+    <a className={styles['root']}>
+      <img className={styles['icon']} src="/logo.png" />
+      <div className={styles['text']}>Study4IT</div>
     </a>
   </Link>
 )

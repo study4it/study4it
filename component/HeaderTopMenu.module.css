@@ -1,0 +1,23 @@
+.root {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  padding: 0 16px;
+  white-space: nowrap;
+}
+
+.item {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 16px;
+  white-space: nowrap;
+}
+
+.item:active {
+}
+
+@media (max-width: 1024px) {
+  .root {
+    display: none;
+  }
+}

@@ -1,39 +1,18 @@
 import React from 'react'
 
+import styles from './Footer.module.css'
+
 const Footer = () => (
-  <footer className="root">
-    <div className="container">
-      <div className="left-half">2019-2020 © All rights reserved</div>
-      <address className="right-half">
-        <div className="text">мы в соц. сетях:</div>
-        <a className="icon-container" href="https://vk.com/study4it">
-          <img src="/assets/vk.svg" className="icon" />
+  <footer className={styles['root']}>
+    <div className={styles['container']}>
+      <div className={styles['left-half']}>2019-2020 © All rights reserved</div>
+      <address className={styles['right-half']}>
+        <div className={styles['text']}>мы в соц. сетях:</div>
+        <a className={styles['icon-container']} href="https://vk.com/study4it">
+          <img src="/vk.svg" className={styles['icon']} />
         </a>
       </address>
     </div>
-    <style jsx>{`
-      .root {
-        margin: 50px;
-      }
-      .container {
-        margin: 50px;
-      }
-      .icon-container {
-        margin: 50px;
-      }
-      .icon {
-        margin: 50px;
-      }
-      .text {
-        margin: 50px;
-      }
-      .left-half {
-        margin: 50px;
-      }
-      .right-half {
-        margin: 50px;
-      }
-    `}</style>
   </footer>
 )
 
