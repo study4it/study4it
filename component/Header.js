@@ -20,17 +20,6 @@ const Header = () => (
         <HeaderTopMenu items={items} />
       </div>
     </div>
-    <style jsx>{`
-      .root {
-        margin: 50px;
-      }
-      .container {
-        margin: 50px;
-      }
-      .content {
-        margin: 50px;
-      }
-    `}</style>
   </header>
 )
 

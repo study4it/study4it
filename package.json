@@ -1,6 +1,6 @@
 {
   "name": "study4it",
-  "license": "Commercial Use",
+  "license": "BSD-Protection",
   "dependencies": {
     "next": "9.5.1",
     "react": "16.13.1",
